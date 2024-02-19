@@ -7,11 +7,7 @@ const PORT = process.env.PORT || 1234
 
 const app = express()
 connect()
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  methods: 'GET'
-};
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.get('/', (req, res) => {
   return res.send('Server is working.')
